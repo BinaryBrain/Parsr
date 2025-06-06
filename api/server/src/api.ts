@@ -93,7 +93,7 @@ export class ApiServer {
     v1_0.get('/modules', this.handleGetModules.bind(this));
     v1_0.get('/module-config/:modulename', this.handleGetModuleConfig.bind(this));
 
-    app.listen(port, () => {
+    app.listen(port, '0.0.0.0', () => {
       logger.info(`Api listening on port ${port}!`);
     });
   }

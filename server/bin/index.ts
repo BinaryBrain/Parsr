@@ -261,11 +261,16 @@ function main(): void {
       tifFilePath,
     ]);
 
+    logger.info(`Converting PDF to images using ImageMagick: ${utils.getConvertPath()}`);
+    logger.info(`PDF file: ${pdfPath}`);
+    logger.info(`Output file: ${tifFilePath}`);
+
+    logger.error(JSON.stringify(ret));
     if (ret.status !== 0) {
       logger.error(ret.stderr);
-      throw new Error(
-        'ImageMagick failure: impossible to convert pdf to images (is ImageMagick installed?)',
-      );
+      // throw new Error(
+      //   'ImageMagick failure: impossible to convert pdf to images (is ImageMagick installed?)',
+      // );
     }
 
     return tifFilePath;

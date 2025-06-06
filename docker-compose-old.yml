@@ -8,7 +8,7 @@ services:
     environment:
       ABBYY_SERVER_URL:
     volumes:
-      - ./pipeline/:/opt/app-root/src/api/server/dist/output
+      - ./pipeline/:/tmp
 
   parsr-ui:
     image: axarev/parsr-ui-localhost

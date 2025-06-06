@@ -365,6 +365,7 @@ function ncolourToHex(color: string) {
  */
 function repairPdf(filePath: string) {
   return new Promise<string>(resolve => {
+    logger.info(`Repairing PDF file using MuPDF (mutool)...`);
     const mutoolPath = utils.getCommandLocationOnSystem('mutool');
     if (!mutoolPath) {
       logger.warn('MuPDF not installed !! Skip clean PDF.');
